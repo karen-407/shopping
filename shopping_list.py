@@ -22,7 +22,7 @@ def add_new_shopping_list(lists_by_name, new_list_name):
     """
 
     # your code here! 
-    pass
+    lists_by_name[new_list_name] = []
 
 
 def remove_shopping_list(lists_by_name, list_name_to_remove):
@@ -212,11 +212,14 @@ def execute_repl(shopping_lists_by_name):
             # get name of list and add it
             list_name = raw_input('Enter the name for your list: ')
             add_new_shopping_list(shopping_lists_by_name, list_name)
+            print shopping_lists_by_name
 
             # get items for list and add them
             input_str = raw_input('Please enter items separated by commas: ')
             items = parse_string_of_items(input_str)
             shopping_lists_by_name[list_name] = items
+            print shopping_lists_by_name
+
 
         elif choice == 7:
             # quit
